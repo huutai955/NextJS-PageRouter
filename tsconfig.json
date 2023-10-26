@@ -14,7 +14,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*", "./components/*", "./redux/*"]
+      "@/*": ["./src/*", "./components/*", "./redux/*", "./api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
