@@ -1,9 +1,25 @@
+'use client'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import {
+  useQuery
+} from '@tanstack/react-query'
+import { getProducts } from '@/tanstack/products'
+import { Skeleton } from '@mui/material';
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { data, isLoading, isPending, isError, error } = useQuery({ queryKey: ['products'], queryFn: getProducts })
+
+  if (isLoading) {
+    return <div className='h-screen'>
+      <Skeleton width={'100%'} height={'100%'}  variant="rectangular" />
+    </div>
+  }
+
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
