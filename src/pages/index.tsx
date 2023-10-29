@@ -16,7 +16,7 @@ export default function Home() {
 
   if (isLoading) {
     return <div className='h-screen'>
-      <Skeleton width={'100%'} height={'100%'}  variant="rectangular" />
+      <Skeleton width={'100%'} height={'100%'} variant="rectangular" />
     </div>
   }
 
